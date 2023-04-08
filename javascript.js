@@ -1,11 +1,10 @@
 // prompting the user for a choice //
-
-
-askUser();                                                                          
+let playerchoice;
+askUser()
 
 function askUser(){
     const choice = prompt("Choose rock, paper, or scissors");
-    const playerchoice = choice.toLowerCase();
+    playerchoice = choice.toLowerCase();
     if (playerchoice == "rock" || playerchoice == "paper" || playerchoice == "scissors") {
         alert("Thank you");
     } else if (playerchoice == "") {
@@ -40,24 +39,19 @@ function getComputerChoice() {
 
 //playround - probably need a "for loop" //
 
-playRound()
+//playRound()
 
 function playRound() {
-    if (askUser == "rock" && getComputerChoice() == "scissors") {
+    if (playerchoice == "rock" && getComputerChoice() == "scissors") {
        alert("You win! Rock beats Scissors");
-    } else if (askUser == "scissors" && getComputerChoice() == "paper") {
+    } else if (playerchoice == "scissors" && getComputerChoice() == "paper") {
         alert("You win! Scissors beats Paper");
-    } else if (askUser == "paper" && getComputerChoice() == "rock") {
+    } else if (playerchoice == "paper" && getComputerChoice() == "rock") {
         alert("You win! Paper beats Rock");
-    } else if (askUser == getComputerChoice()) {
+    } else if (playerchoice == getComputerChoice()) {
         alert("Tie! Play again!");
     } else {
             alert("You lose!");
    }
-
-
 }
-
-
-
 
