@@ -43,12 +43,18 @@ function playRound() {
         } else if (playerchoice == "paper" && computerChoice == "rock") {
             alert("You win! Paper beats Rock");
             playerScore++
-        } else if (playerchoice == computerChoice) {
-            alert("Tie! Play again!");
+        } else if (playerchoice == "rock" && computerChoice == "paper") {
+            alert("You lose! Paper beats Rock");
+            computerScore++
+        } else if (playerchoice == "paper" && computerChoice == "scissors") {
+            alert("You lose! Scissors beats Paper")
+            computerScore++
+        } else if (playerchoice == "scissors" && computerChoice == "rock") {
+            alert("You lose! Rock beats Scissors")
+            computerScore++
         } else {
-                alert("You lose!");
-                computerScore++
-    }
+            alert("Tie! Try again");
+        }
 }
 
 let i;
