@@ -1,6 +1,5 @@
 // prompting the user for a choice //
 let playerchoice;
-askUser()
 
 function askUser(){
     const choice = prompt("Choose rock, paper, or scissors");
@@ -13,43 +12,28 @@ function askUser(){
         alert("try again");
         askUser();
     }
-
-    return playerchoice;
-    
+    return playerchoice;    
 }
 
 // computer choice //
 let computerChoice;
 
-getRandomInt();
-
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-getComputerChoice();
-
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
-    computerChoice = choices[getRandomInt(3)];
-
-    
+    computerChoice = choices[getRandomInt(3)];    
     return computerChoice;
 }
 
-
-
 //playround - probably need a "for loop" //
 
-
-let i = 0;
 let playerScore = 0;
 let computerScore = 0;
 
-
-for (let i = 0; i < 5; i++) {
-    function playRound() {
-
+function playRound() {
         if (playerchoice == "rock" && computerChoice == "scissors") {
         alert("You win! Rock beats Scissors");
         playerScore++
@@ -66,22 +50,31 @@ for (let i = 0; i < 5; i++) {
                 computerScore++
     }
 }
+
+let i;
+
+for (let i = 0; i < 5; i++) {
+    askUser();
+    getRandomInt();
+    getComputerChoice();
+    playRound();
+    
 }
 
+gameScore()
+
+function gameScore(){
+if (playerScore > computerScore) {
+    alert("YOU WIN!!!");
+} else if (computerScore > playerScore) {
+    alert("Better luck next time, chump");
+} else {
+    alert("Tie game!");
+}
+}
+
+console.log("Player Score =" + " " + playerScore);
+console.log("Computer Score =" + " " + computerScore);
 
 
-
-
-
- console.log("Player Score =" + " " + playerScore);
- console.log("Computer Score =" + " " + computerScore);
-
- //score()
-
- //function score() {
- //   if (playerScore == 1) {
-  //      alert("YOU WIN THE GAME!!!");
- //   } else {
- //      alert("YOU LOSE!");
- //   }
-// }
+ 
